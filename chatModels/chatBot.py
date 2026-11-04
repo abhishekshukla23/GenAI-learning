@@ -19,7 +19,7 @@ def extract_content(content):
   
     return str(content)
 
-messages=[
+messages=[ 
     SystemMessage(content="You are a funny AI agent")
 ]
 while True:
