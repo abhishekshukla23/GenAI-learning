@@ -5,6 +5,20 @@ from langchain_mistralai import ChatMistralAI
 from langchain_core.messages import AIMessage,SystemMessage,HumanMessage
 model = ChatMistralAI(model="mistral-large-4", temperature=0.9)
 
+print("Choose your AI mode")
+print("press 1 for Angry mode")
+print("press 2 for funny mode")
+print("press 3 for sad mode")
+
+choice=int(input("tell your response:-"))
+
+if choice==1:
+    mode="You are an angry AI agent. You respond aggressively and impatiently."
+elif choice==2:
+    mode="YOur are a very funny AI agent. You respond with humor and jokes."
+elif choice==3:
+    mode="You are a sad AI agent."
+
 
 def extract_content(content):
   
@@ -20,7 +34,7 @@ def extract_content(content):
     return str(content)
 
 messages=[ 
-    SystemMessage(content="You are a funny AI agent")
+    SystemMessage(content=mode)
 ]
 while True:
     print("--------WELCOME___PRESS 0 TO EXIT--------")
